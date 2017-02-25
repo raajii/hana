@@ -1,0 +1,21 @@
+DROP table AD.OrderDetail;
+CREATE COLUMN TABLE AD.OrderDetail
+(	
+	ORDER_DETAIL_IDENTIFIER NVARCHAR(20),
+    ORDER_IDENTIFIER NVARCHAR(20),
+    PERSON_PHONE_ID NVARCHAR(20),
+    PPERSON_PHONE_ID NVARCHAR(20),
+    ORDER_DATE DATE,
+    AMOUNT	DECIMAL(12,3),
+    PRIMARY KEY (ORDER_DETAIL_IDENTIFIER)
+);
+
+INSERT INTO AD.PPHONE VALUES ('1', 'order1', 'phone4', 'Physician1', '2014-01-1', '2014-12-31', 2);
+INSERT INTO AD.PPHONE VALUES ('2', 'order1', 'phone5', 'Physician1', '2014-01-2', '2014-10-31', 2);
+INSERT INTO AD.PPHONE VALUES ('3', 'order2', 'phone6', 'Physician1', '2014-01-5', '2014-09-15', 2);
+
+INSERT INTO AD.OrderDetail VALUES ('1', 'order1', '113','123', '2014-01-1', 200);
+INSERT INTO AD.OrderDetail VALUES ('2', 'order1', '114','124',  '2014-01-2', 300);
+INSERT INTO AD.OrderDetail VALUES ('3', 'order2', '115','125', '2014-01-5', 400);
+
+truncate table AD.OrderDetail;
